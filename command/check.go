@@ -40,12 +40,30 @@ func CmdCheck(cmdBuilder runner.Builder) func(c *cli.Context) error {
 		}
 
 		user := "me"
+
+		total := 0
+
 		resp, err := srv.Users.Messages.List(user).LabelIds("INBOX").Q("label:unread").Do()
 		if err != nil {
 			return fmt.Errorf("Unable to check inbox. %v", err)
 		}
 
-		fmt.Fprintf(c.App.Writer, "%d\n", resp.ResultSizeEstimate)
+		total += len(resp.Messages)
+
+		nextPageToken := resp.NextPageToken
+
+		for nextPageToken != "" {
+			resp, err = srv.Users.Messages.List(user).LabelIds("INBOX").Q("label:unread").PageToken(nextPageToken).Do()
+			if err != nil {
+				return fmt.Errorf("Unable to check inbox. %v", err)
+			}
+
+			total += len(resp.Messages)
+
+			nextPageToken = resp.NextPageToken
+		}
+
+		fmt.Fprintf(c.App.Writer, "%d\n", total)
 		return nil
 	}
 }
