@@ -197,7 +197,12 @@ func getMockGoogleAPI(t *testing.T) *httptest.Server {
 
 		if r.URL.String() == "/me/messages?alt=json&labelIds=INBOX&q=label%3Aunread" {
 			resp := gmail.ListMessagesResponse{
-				ResultSizeEstimate: 4,
+				Messages: []*gmail.Message{
+					{},
+					{},
+					{},
+					{},
+				},
 			}
 			bytes, _ := json.Marshal(resp)
 			_, err := w.Write(bytes)
