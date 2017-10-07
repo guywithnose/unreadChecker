@@ -200,6 +200,18 @@ func getMockGoogleAPI(t *testing.T) *httptest.Server {
 				Messages: []*gmail.Message{
 					{},
 					{},
+				},
+				NextPageToken: "page2",
+			}
+			bytes, _ := json.Marshal(resp)
+			_, err := w.Write(bytes)
+			assert.Nil(t, err)
+			return
+		}
+
+		if r.URL.String() == "/me/messages?alt=json&labelIds=INBOX&pageToken=page2&q=label%3Aunread" {
+			resp := gmail.ListMessagesResponse{
+				Messages: []*gmail.Message{
 					{},
 					{},
 				},
