@@ -189,7 +189,7 @@ func getMockGoogleAPI(t *testing.T) *httptest.Server {
 		r.Body = ioutil.NopCloser(bytes.NewBuffer(b))
 		if strings.Contains(r.URL.String(), "access_type=offline") {
 			go func() {
-				_, err := http.Get(fmt.Sprintf("%s?code=foo", r.FormValue("redirect_uri")))
+				_, err = http.Get(fmt.Sprintf("%s?code=foo", r.FormValue("redirect_uri")))
 				assert.Nil(t, err)
 			}()
 			return
@@ -204,7 +204,7 @@ func getMockGoogleAPI(t *testing.T) *httptest.Server {
 				NextPageToken: "page2",
 			}
 			bytes, _ := json.Marshal(resp)
-			_, err := w.Write(bytes)
+			_, err = w.Write(bytes)
 			assert.Nil(t, err)
 			return
 		}
@@ -217,7 +217,7 @@ func getMockGoogleAPI(t *testing.T) *httptest.Server {
 				},
 			}
 			bytes, _ := json.Marshal(resp)
-			_, err := w.Write(bytes)
+			_, err = w.Write(bytes)
 			assert.Nil(t, err)
 			return
 		}
@@ -236,7 +236,7 @@ func getMockGoogleAPIInboxFailure(t *testing.T) *httptest.Server {
 		r.Body = ioutil.NopCloser(bytes.NewBuffer(b))
 		if strings.Contains(r.URL.String(), "access_type=offline") {
 			go func() {
-				_, err := http.Get(fmt.Sprintf("%s?code=foo", r.FormValue("redirect_uri")))
+				_, err = http.Get(fmt.Sprintf("%s?code=foo", r.FormValue("redirect_uri")))
 				assert.Nil(t, err)
 			}()
 			return
@@ -261,7 +261,7 @@ func getMockGoogleAPITokenFailure(t *testing.T) *httptest.Server {
 		r.Body = ioutil.NopCloser(bytes.NewBuffer(b))
 		if strings.Contains(r.URL.String(), "access_type=offline") {
 			go func() {
-				_, err := http.Get(fmt.Sprintf("%s?code=foo", r.FormValue("redirect_uri")))
+				_, err = http.Get(fmt.Sprintf("%s?code=foo", r.FormValue("redirect_uri")))
 				assert.Nil(t, err)
 			}()
 			return

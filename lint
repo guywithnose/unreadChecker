@@ -3,7 +3,7 @@ gometalinter --install --update > /dev/null
 gometalinter --vendored-linters \
     --exclude '^vendor' \
     --disable-all \
-    --enable aligncheck \
+    --enable maligned \
     --enable deadcode \
     --enable dupl --dupl-threshold=100 \
     --enable errcheck \
@@ -22,4 +22,4 @@ gometalinter --vendored-linters \
     --enable varcheck \
     --enable vet \
     --enable vetshadow \
-    command
+    command .
