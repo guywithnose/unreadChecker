@@ -3,9 +3,9 @@
 
 [[projects]]
   name = "cloud.google.com/go"
-  packages = ["compute/metadata","internal"]
-  revision = "2e6a95edb1071d750f6d7db777bf66cd2997af6c"
-  version = "v0.7.0"
+  packages = ["compute/metadata"]
+  revision = "eaddaf6dd7ee35fd3c2420c8d27478db176b0485"
+  version = "v0.15.0"
 
 [[projects]]
   name = "github.com/davecgh/go-spew"
@@ -14,20 +14,16 @@
   version = "v1.1.0"
 
 [[projects]]
+  branch = "master"
   name = "github.com/golang/protobuf"
-  packages = ["proto","ptypes/any"]
-  revision = "2bba0603135d7d7f5cb73b2125beeda19c09f4ef"
-
-[[projects]]
-  name = "github.com/googleapis/gax-go"
-  packages = ["."]
-  revision = "9af46dd5a1713e8b5cd71106287eba3cefdde50b"
+  packages = ["proto"]
+  revision = "1643683e1b54a9e88ad26d98f81400c8c9d9f4f9"
 
 [[projects]]
   name = "github.com/guywithnose/runner"
   packages = ["."]
-  revision = "d2123843196b663e9bfab304fc51c8c3dc6b1e71"
-  version = "v0.0.2"
+  revision = "9d955863e5ee7fdc0def34d500952f1b40baf93b"
+  version = "v0.0.3"
 
 [[projects]]
   name = "github.com/pmezard/go-difflib"
@@ -44,46 +40,32 @@
 [[projects]]
   name = "github.com/urfave/cli"
   packages = ["."]
-  revision = "0bdeddeeb0f650497d603c4ad7b20cfe685682f6"
-  version = "v1.19.1"
+  revision = "cfb38830724cc34fedffe9a2a29fb54fa9169cd1"
+  version = "v1.20.0"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/net"
-  packages = ["context","context/ctxhttp","http2","http2/hpack","idna","internal/timeseries","lex/httplex","trace"]
-  revision = "ffcf1bedda3b04ebb15a168a59800a73d6dc0f4d"
+  packages = ["context","context/ctxhttp"]
+  revision = "cd69bc3fc700721b709c3a59e16e24c67b58f6ff"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/oauth2"
   packages = [".","google","internal","jws","jwt"]
-  revision = "7fdf09982454086d5570c7db3e11f360194830ca"
-
-[[projects]]
-  name = "golang.org/x/text"
-  packages = ["internal/gen","internal/triegen","internal/ucd","secure/bidirule","transform","unicode/bidi","unicode/cldr","unicode/norm","unicode/rangetable"]
-  revision = "470f45bf29f4147d6fbd7dfd0a02a848e49f5bf4"
+  revision = "bb50c06baba3d0c76f9d125c0719093e315b5b44"
 
 [[projects]]
   branch = "master"
   name = "google.golang.org/api"
   packages = ["gensupport","gmail/v1","googleapi","googleapi/internal/uritemplates"]
-  revision = "fbbaff1827317122a8a0e1b24de25df8417ce87b"
+  revision = "7afc123cf726cd2f253faa3e144d2ab65477b18f"
 
 [[projects]]
   name = "google.golang.org/appengine"
   packages = [".","internal","internal/app_identity","internal/base","internal/datastore","internal/log","internal/modules","internal/remote_api","internal/urlfetch","urlfetch"]
-  revision = "56d253d1dd14aa01937e12c73a0971bcfd797ff2"
-
-[[projects]]
-  name = "google.golang.org/genproto"
-  packages = ["googleapis/rpc/status"]
-  revision = "411e09b969b1170a9f0c467558eb4c4c110d9c77"
-
-[[projects]]
-  name = "google.golang.org/grpc"
-  packages = [".","codes","credentials","grpclb/grpc_lb_v1","grpclog","internal","keepalive","metadata","naming","peer","stats","status","tap","transport"]
-  revision = "277e90a4321cba6ad9f9ca4a832165265002c3a5"
+  revision = "150dc57a1b433e64154302bdc40b6bb8aefa313a"
+  version = "v1.0.0"
 
 [solve-meta]
   analyzer-name = "dep"
