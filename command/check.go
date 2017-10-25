@@ -16,7 +16,7 @@ var BasePath string
 func CmdCheck(cmdBuilder runner.Builder) func(c *cli.Context) error {
 	return func(c *cli.Context) error {
 		if c.NArg() != 0 {
-			return cli.NewExitError("Usage: \"unreadChecker check\"", 1)
+			return cli.NewExitError("Usage: \"unreadChecker\"", 1)
 		}
 
 		err := checkFlags(c)
